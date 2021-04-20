@@ -10,4 +10,8 @@
   short_bio: @student.short_bio,
   linkedin_url: @student.linkedin_url,
   twitter_handle: @student.twitter_handle,
+  experiences: @student.experiences,
+  educations: @student.educations,
+  capstones: @student.capstones,
+  skills: @student.skills,
 }
