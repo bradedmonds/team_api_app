@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  # EXAMPLE HTML ROUTE
-  # get "/photos" => "photos#index"
-
-  # EXAMPLE JSON ROUTE WITH API NAMESPACE
   namespace :api do
 
     # Education Routes #
@@ -12,7 +8,15 @@ Rails.application.routes.draw do
     patch "/educations/id" => "educations#update"
     delete "/educations/id" => "educations#destroy"
 
-    # Experiences Routes#
+    #students
+    get "/students" => "students#index"
+    post "/students" => "students#create"
+    get "/students/:id" => "students#show"
+    patch "/students/:id" => "students#update"
+    delete "/students/:id" => "students#destroy"
+ 
+    #experiences
+
     get "/experiences" => "experiences#index"
     post "/experiences" => "experiences#create"
     get "/experiences/:id" => "experiences#show"
