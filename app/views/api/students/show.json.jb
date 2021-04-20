@@ -12,5 +12,6 @@
     twitter_handle: @student.twitter_handle,
     experiences: @student.experiences,
     educations: @student.educations,
-    capstones: @student.capstones
+    capstones: @student.capstones,
+    skills: @student.skills
  }
