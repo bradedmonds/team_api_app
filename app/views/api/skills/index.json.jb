@@ -1,0 +1,9 @@
+@skills.map do |skill|
+  {
+    id: skill.id,
+    skill_name_1: skill.skill_name_1,
+    skill_name_2: skill.skill_name_2,
+    skill_name_3: skill.skill_name_3,
+    skill_name_4: skill.skill_name_4
+  }
+end 
