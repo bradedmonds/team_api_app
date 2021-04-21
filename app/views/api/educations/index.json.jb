@@ -1,5 +1,6 @@
-@educations.map do |education|
+@capstones.map do |education|
   {
+    
   start_date: education.start_date,
   end_date: education.end_date,
   degree: education.degree, 
