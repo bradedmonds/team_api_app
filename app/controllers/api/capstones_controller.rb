@@ -5,15 +5,13 @@ class Api::CapstonesController < ApplicationController
   end
 
   def create
-    @capstone = capstone.new(
-      start_date: params[:start_date],
-      end_date: params[:end_date],
-      job_title: params[:job_title],
-      company_name: params[:company_name],
-      details: params[:details],
+    @capstone = Capstone.new(
+      name: params[:name],
+      description: params[:description],
+      url: params[:url],
+      screenshot: params[:screenshot],
       student_id: params[:student_id],
     )
-
     if @capstone.save
       render "show.json.jb"
     else
@@ -27,14 +25,12 @@ class Api::CapstonesController < ApplicationController
   end
 
   def update
-    @capstone = Capstone.find(params[:id])
-
-    @capstone.start_date = params[:start_date] || capstone.start_date,
-                           @capstone.end_date = params[:end_date] || capstone.end_date,
-                           @capstone.job_title = params[:job_title] || capstone.job_title,
-                           @capstone.company_name = params[:company_name] || capstone.company_name,
-                           @capstone.details = params[:details] || capstone.details,
-                           @capstone.student_id = params[:student_id] || capstone.student_id,
+    @capstone = Capstone.find_by(id: params[:id])
+    @capstone.name = params[:name] || @capstone.name
+    @capstone.description = params[:description] || capstone.description
+    @capstone.url = params[:url] || capstone.url
+    @capstone.screenshot = params[:screenshot] || capstone.screenshot
+    @capstone.student_id = params[:student_id] || capstone.student_id
     if @capstone.save
       render "show.json.jb"
     else
@@ -43,8 +39,8 @@ class Api::CapstonesController < ApplicationController
   end
 
   def destroy
-    capstone = capstone.find(params[:id])
+    capstone = Capstone.find(params[:id])
     capstone.destroy
-    render json: { message: "Successfully Destroyed Experience" }
+    render json: { message: "Successfully Destroyed Capstone" }
   end
 end
