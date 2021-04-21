@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get "/students/:id" => "students#show"
     patch "/students/:id" => "students#update"
     delete "/students/:id" => "students#destroy"
- 
+
     #experiences
 
     get "/experiences" => "experiences#index"
@@ -35,7 +35,11 @@ Rails.application.routes.draw do
     get "/capstones/:id" => "capstones#show"
     patch "/capstones/:id" => "capstones#update"
     delete "/capstones/:id" => "capstones#destroy"
-    
 
+    #users
+    post "/users" => "users#create"
+
+    #sessions
+    post "/sessions" => "sessions#create"
   end
 end

@@ -20,12 +20,12 @@ class Api::CapstonesController < ApplicationController
   end
 
   def show
-    @capstone = Capstone.find(params[:id])
+    @capstone = Capstone.find_by(params[:student_id])
     render "show.json.jb"
   end
 
   def update
-    @capstone = Capstone.find_by(id: params[:id])
+    @capstone = Capstone.find_by(params[:student_id])
     @capstone.name = params[:name] || @capstone.name
     @capstone.description = params[:description] || capstone.description
     @capstone.url = params[:url] || capstone.url

@@ -17,12 +17,12 @@ class Api::SkillsController < ApplicationController
   end
 
   def show
-    @skill = Skill.find_by(id: params[:id])
+    @skill = Skill.find_by(params[:student_id])
     render "show.json.jb"
   end
 
   def update
-    @skill = Skill.find_by(id: params[:id])
+    @skill = Skill.find_by(params[:student_id])
     @skill.skill_name_1 = params[:skill_name_1] || @skill.skill_name_1
     @skill.skill_name_2 = params[:skill_name_2] || @skill.skill_name_2
     @skill.skill_name_3 = params[:skill_name_3] || @skill.skill_name_3

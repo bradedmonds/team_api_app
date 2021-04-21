@@ -21,12 +21,12 @@ class Api::EducationsController < ApplicationController
   end
 
   def show
-    @education = Education.find(params[:id])
+    @education = Education.find_by(params[:student_id])
     render "show.json.jb"
   end
 
   def update
-    @education = Education.find(params[:id])
+    @education = Education.find_by(params[:student_id])
     @education.start_date = params[:start_date] || education.start_date
     @education.end_date = params[:end_date] || education.end_date
     @education.degree = params[:degree] || education.degree
